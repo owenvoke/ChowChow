@@ -1,0 +1,16 @@
+{
+  "name": "pxgamer/chow-chow",
+  "description": "A chow chow for my wonderful girlfriend <3",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "PXgamer",
+      "email": "owzie123@gmail.com"
+    }
+  ],
+  "autoload": {
+    "psr-4": {
+      "pxgamer\\Chow\\": "src/"
+    }
+  }
+}
