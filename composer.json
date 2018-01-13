@@ -1,11 +1,11 @@
 {
-  "name": "pxgamer/chow-chow",
-  "type": "project",
-  "description": "A chow chow for my wonderful girlfriend <3",
-  "license": "MIT",
-  "autoload": {
-    "psr-4": {
-      "pxgamer\\Chow\\": "src/"
+    "name": "pxgamer/chow-chow",
+    "type": "project",
+    "description": "A chow chow for my wonderful girlfriend <3",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "pxgamer\\Chow\\": "src/"
+        }
     }
-  }
 }
