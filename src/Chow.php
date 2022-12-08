@@ -1,36 +1,45 @@
 <?php
 
-namespace pxgamer\Chow;
+namespace OwenVoke\Chow;
 
 class Chow
 {
-    private $chow;
+    /** @var array<int, string> $chow */
+    private readonly array $chow;
 
     public function __construct()
     {
-        $this->chow = $this->sniff()->chow;
+        $this->chow = $this->sniff()['chow'];
     }
 
-    public function bark()
+    public function bark(): string
     {
-        echo '<pre>';
+        $chow = '<pre>';
+
         foreach ($this->chow as $bodyPart) {
-            echo $bodyPart . "\n";
+            $chow .= $bodyPart . "\n";
         }
-        echo '</pre>';
-        return true;
+
+        $chow .= '</pre>';
+
+        return $chow;
     }
 
-    public function paw()
+    public function paw(): string
     {
-        return $this->chow;
+        $chow = '';
+
+        foreach ($this->chow as $bodyPart) {
+            $chow .= $bodyPart . "\n";
+        }
+
+        return $chow;
     }
 
-    public function sniff()
+    public function sniff(): array
     {
-        $tempChow = file_get_contents('chow.json');
-        $jsonChow = json_decode($tempChow);
+        $tempChow = file_get_contents(__DIR__.'/../resources/chow.json');
 
-        return $jsonChow;
+        return json_decode($tempChow, true, 512, JSON_THROW_ON_ERROR);
     }
 }
